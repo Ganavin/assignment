@@ -1,0 +1,45 @@
+
+<div class="mycontent col-md-12">
+    <h1> Employee Details : {{ employees.length }} </h1>
+    <hr>
+    <div style="display: inline-flex;">
+        <select name="selectedDepartment" id="aantal" class="form-control" [(ngModel)]="selectedDepartment">
+            <option *ngFor="let option of options" [value]="option" >{{option}}</option>
+        </select>
+        
+        <input type="text" class="form-control nameInput" [(ngModel)]="nameSearchInput" >
+
+        <!-- <input type="text" 
+       [(ngModel)]="searchText"
+      (keyup.enter)="filterArray()"> -->
+        
+        <button class="btn btn-primary searchButton" (click)="filterArray()" [(ngModel)]="searchbyname"> Search </button>
+        
+        <button class="resetreloadButton"> Reset and Reload Data </button>
+        
+        <select name="SortBy" class="sortDropdowm"  >
+            <option value=""> Name (a-z) </option>
+            <option value=""> Name (z-a) </option>
+            <option value=""> Age </option>
+        </select>
+    </div>
+    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td *ngFor = "let header of headers">
+                    {{header}}
+                </td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of filteredArray | mypipe:'employeename' " >
+                <td>{{employee.employeename}}</td>
+                <td>{{employee.Age}}</td>
+                <td>{{employee.EmailAddress}}</td>
+                <td title="{{employee.Departments}}">{{employee.Departments.length}}</td>
+            </tr>
+        </tbody>
+    </table> 
+</div>

@@ -1,0 +1,36 @@
+#aantal {
+    width: 200px;
+    
+}
+.nameInput {
+    width: 300px;
+}
+.mycontent {
+    width: 75%;
+    height: 600px;
+}
+
+.table {
+    /* border: 1px solid #000; */
+    margin-top: 60px;
+    width: 60%;
+    border: 1px solid black;
+}
+thead {
+    font-weight: bold;
+}
+td{
+    border-right: 0.5px solid black;
+}
+.nameInput {
+    margin-left: 20px;
+}
+.searchButton{
+    margin-left: 30px;
+}
+.resetreloadButton {
+    margin-left: 20px;
+}
+.sortDropdowm {
+    margin-left: 200px;
+}
