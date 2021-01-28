@@ -7,7 +7,7 @@
             <option *ngFor="let option of options" [value]="option" >{{option}}</option>
         </select>
         
-        <input type="text" class="form-control nameInput" [(ngModel)]="nameSearchInput" >
+        <input type="text" class="nameInput" [(ngModel)]="nameSearchInput" >
 
         <!-- <input type="text" 
        [(ngModel)]="searchText"
@@ -17,10 +17,8 @@
         
         <button class="resetreloadButton"> Reset and Reload Data </button>
         
-        <select name="SortBy" class="sortDropdowm"  >
-            <option value=""> Name (a-z) </option>
-            <option value=""> Name (z-a) </option>
-            <option value=""> Age </option>
+        <select name="selectedoption" class="sortDropdowm" [(ngModel)]="selectedoption" >
+            <option *ngFor="let options of options2" [value]="options"> {{ options.name }} </option>
         </select>
     </div>
     
@@ -34,7 +32,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let employee of filteredArray | mypipe:'employeename' " >
+            <tr *ngFor="let employee of filteredArray | sorttable : 'employeename' " >
                 <td>{{employee.employeename}}</td>
                 <td>{{employee.Age}}</td>
                 <td>{{employee.EmailAddress}}</td>

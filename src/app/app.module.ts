@@ -8,14 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TablePage1Component } from './table-page1/table-page1.component';
-import { MypipePipe } from './mypipe.pipe';
+import { SorttablePipe } from './sorttable.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TablePage1Component,
-    MypipePipe
+    SorttablePipe,
   ],
   imports: [
     BrowserModule,
